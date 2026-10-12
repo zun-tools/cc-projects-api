@@ -30,7 +30,7 @@ def list_items_v1(response: Response):
 
 
 DEFAULT_LIMIT = 20
-MAX_LIMIT = 100
+MAX_LIMIT = 50
 
 
 @app.get("/v2/items")

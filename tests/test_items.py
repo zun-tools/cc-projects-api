@@ -47,6 +47,6 @@ def test_v2_last_page_is_partial():
 
 def test_v2_rejects_out_of_range_params():
     assert client.get("/v2/items", params={"limit": 0}).status_code == 422
-    assert client.get("/v2/items", params={"limit": 101}).status_code == 422
+    assert client.get("/v2/items", params={"limit": 51}).status_code == 422
     assert client.get("/v2/items", params={"offset": -1}).status_code == 422
-    assert client.get("/v2/items", params={"limit": 100}).status_code == 200
+    assert client.get("/v2/items", params={"limit": 50}).status_code == 200

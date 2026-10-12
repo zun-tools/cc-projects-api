@@ -4,7 +4,7 @@ Claude Code Projects で、2つのリポジトリにまたがる仕事を試す�
 組になるフロント側は [cc-projects-web](https://github.com/zun-tools/cc-projects-web) です。
 
 - `GET /v1/items` ... 古い版。配列をそのまま返す。レスポンスヘッダ `Deprecation: true` 付き。**廃止予定**
-- `GET /v2/items` ... `{"items": [...], "total": n}` で返す。`limit`（既定 20、1〜100）と `offset`（既定 0）でページ送りできる。`total` は常に全件数
+- `GET /v2/items` ... `{"items": [...], "total": n}` で返す。`limit`（既定 20、1〜50）と `offset`（既定 0）でページ送りできる。`total` は常に全件数
 
 ## 起動とテスト
 
@@ -22,7 +22,7 @@ A small FastAPI sample for trying Claude Code Projects on work that spans two re
 (this is the API side; the front end is [cc-projects-web](https://github.com/zun-tools/cc-projects-web)).
 
 - `GET /v1/items`: legacy. Returns a bare array with a `Deprecation: true` header. **Scheduled for removal.**
-- `GET /v2/items`: returns `{"items": [...], "total": n}`. Paginate with `limit` (default 20, 1-100) and `offset` (default 0); `total` is always the full count.
+- `GET /v2/items`: returns `{"items": [...], "total": n}`. Paginate with `limit` (default 20, 1-50) and `offset` (default 0); `total` is always the full count.
 
 Run: `pip install -r requirements.txt -r requirements-dev.txt`, then `uvicorn app.main:app --port 8000`. Test: `pytest`.
 
