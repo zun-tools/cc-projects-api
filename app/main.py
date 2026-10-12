@@ -26,6 +26,7 @@ ITEMS = [
 def list_items_v1(response: Response):
     """Deprecated: returns a bare array. Use /v2/items."""
     response.headers["Deprecation"] = "true"
+    response.headers["Link"] = '</v2/items>; rel="successor-version"'
     return ITEMS
 
 

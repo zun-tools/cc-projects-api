@@ -9,6 +9,7 @@ def test_v1_returns_array_with_deprecation_header():
     r = client.get("/v1/items")
     assert r.status_code == 200
     assert r.headers["Deprecation"] == "true"
+    assert r.headers["Link"] == '</v2/items>; rel="successor-version"'
     body = r.json()
     assert isinstance(body, list)
     assert len(body) == 10
